@@ -18,15 +18,19 @@ def powerrule (Func):
     x = ax[1]
     exp = parts[1]
     deriv = (str(float(coef)*float(exp))+"*"+x+"^"+str(float(exp)-1))
-    print (deriv)
+    return deriv
     
 def productrule (Func):
     parts = Func.split("*")
     u = parts[0]
-    parts = parts[0]
+    del parts[0]
     v = ""
     for i in parts:
-        v = (v+"*"+i)
-    
+        if v == "":
+            v = (v+i)
+        if v != "":
+            v = (v+"*"+i)
+    deriv = (u+"*"+derivative(v)+"+"+v+derivative(u))
+    return deriv
     
 print (derivative (Function))
