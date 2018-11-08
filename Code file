@@ -1,2 +1,14 @@
-
 #Andy Kotz and Andrew Parker derivatives project
+
+#Inputs
+Function = input("Input Function (write coefficients): ")
+#IntvlStart = float(input("Input Interval Start: "))
+#IntvlEnd = float(input("Input Interval End: "))
+
+if "^" in Function:
+    parts = Function.split("^")
+    ax = parts[0].split("*")
+    coef = ax[0]
+    x = ax[1]
+    exp = parts[1]
+    print(coef+x+exp)
