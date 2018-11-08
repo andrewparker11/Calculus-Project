@@ -5,11 +5,28 @@ Function = input("Input Function (write coefficients): ")
 #IntvlStart = float(input("Input Interval Start: "))
 #IntvlEnd = float(input("Input Interval End: "))
 
-if "^" in Function:
-    parts = Function.split("^")
+def derivative (Func):
+    if "^" in Func:
+        return powerrule (Func)
+    elif "*" in Func:
+        return productrule (Func)
+
+def powerrule (Func):
+    parts = Func.split("^")
     ax = parts[0].split("*")
     coef = ax[0]
     x = ax[1]
     exp = parts[1]
     deriv = (str(float(coef)*float(exp))+"*"+x+"^"+str(float(exp)-1))
     print (deriv)
+    
+def productrule (Func):
+    parts = Func.split("*")
+    u = parts[0]
+    parts = parts[0]
+    v = ""
+    for i in parts:
+        v = (v+"*"+i)
+    
+    
+print (derivative (Function))
