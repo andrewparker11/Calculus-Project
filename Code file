@@ -27,8 +27,6 @@ def powerrule (Func):
         deriv = (x+"^"+str(float(exp)-1))
     if coef != 1:
         deriv = (str(float(coef)*float(exp))+"*"+deriv)
-    if coef == 0:
-        deriv = 0
     return deriv
     
 def productrule (Func):
@@ -41,7 +39,7 @@ def productrule (Func):
             v = (v+i)
         if v != "":
             v = (v+"*"+i)
-    deriv = (u+"*"+derivative(v)+"+"+v+derivative(u))
-    return deriv
+    derivproduct = (u+"*"+derivative(v)+"+"+v+derivative(u))
+    return derivproduct
     
 print (derivative (Function))
