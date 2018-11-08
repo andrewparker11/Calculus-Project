@@ -1,7 +1,7 @@
 #Andy Kotz and Andrew Parker derivatives project
 
 #Inputs
-Function = input("Input Function (write coefficients): ")
+Function = input("Input Function: ")
 #IntvlStart = float(input("Input Interval Start: "))
 #IntvlEnd = float(input("Input Interval End: "))
 
@@ -14,10 +14,21 @@ def derivative (Func):
 def powerrule (Func):
     parts = Func.split("^")
     ax = parts[0].split("*")
-    coef = ax[0]
-    x = ax[1]
+    if len(ax) <= 1:
+        coef = 1
+        x = ax[0]
+    else:
+        coef = ax[0]
+        x = ax[1]
     exp = parts[1]
-    deriv = (str(float(coef)*float(exp))+"*"+x+"^"+str(float(exp)-1))
+    if (float(exp)-1) == 1:
+        deriv = x
+    else:
+        deriv = (x+"^"+str(float(exp)-1))
+    if coef != 1:
+        deriv = (str(float(coef)*float(exp))+"*"+deriv)
+    if coef == 0:
+        deriv = 0
     return deriv
     
 def productrule (Func):
