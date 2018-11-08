@@ -11,4 +11,5 @@ if "^" in Function:
     coef = ax[0]
     x = ax[1]
     exp = parts[1]
-    print(coef+x+exp)
+    deriv = (str(float(coef)*float(exp))+"*"+x+"^"+str(float(exp)-1))
+    print (deriv)
