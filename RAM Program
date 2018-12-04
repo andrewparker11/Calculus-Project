@@ -26,17 +26,15 @@ for i in range (n):
     MRAM = MRAM + fn*h
     
     if i == 0:
-        SIMP += f1
+        SIMP += f1       #first one
     elif (i-1)%2 == 0:
-        SIMP += f1
+        SIMP += f1       #last one
     elif (i-1)%2 == 0:
         SIMP += 2*f1
     else:
-        SIMP += 4*f1
+        SIMP += 4*f1 
     x = x2
     
-    
-    x = x2
 
 
 print('LRAM = ', LRAM)
